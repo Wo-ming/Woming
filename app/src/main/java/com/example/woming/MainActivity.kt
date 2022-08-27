@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         val btn_msg = binding.btnSend
         var txt_msg = binding.editTxt
 
-        var retrofit = Retrofit.Builder().baseUrl("http://192.168.137.1:8000")
+        var retrofit = Retrofit.Builder().baseUrl("IP주소")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
