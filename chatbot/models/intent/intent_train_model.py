@@ -90,7 +90,6 @@ logits = Dense(INTENT_NUM, name='logits')(dropout_hidden)  # 출력 노드에서
 predictions = Dense(INTENT_NUM, activation=tf.nn.softmax)(logits)
 
 
-
 # 모델 생성
 model = Model(inputs=input_layer, outputs=predictions)
 model.compile(optimizer="adam", loss='sparse_categorical_crossentropy', metrics=['accuracy'])

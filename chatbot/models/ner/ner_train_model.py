@@ -44,9 +44,25 @@ for t in corpus:
 	sentences.append(sentence)
 	tags.append(Bio_tag)
 
-print(sentences)
-
 """
+# tag 종류 확인
+tag_list = []
+for element in tags:
+	for tag in element:
+		if tag not in tag_list:
+			tag_list.append(tag)
+tag_list = set(tag_list)
+print(tag_list)
+"""
+
+# I 태그 삭제
+for element in tags:
+	for idx in range(len(element)):
+		if element[idx] == '-':
+			continue
+		elif element[idx][4] == 'I':
+			element[idx] = '-'
+
 print("샘플 크기 : \n", len(sentences))
 print("0번째 샘플 단어 시퀀스 : \n", sentences[0])
 print("0번째 샘플 BIO 태그 : \n", tags[0])
@@ -61,9 +77,10 @@ tag_tokenizer.fit_on_texts(tags)
 vocab_size = len(p.word_index) + 1
 tag_size = len(tag_tokenizer.word_index) + 1
 
-
+"""
 print("BIO 태그 사전 크기 : ", tag_size)
 print("단어 사전 크기 : ", vocab_size)
+"""
 
 
 # 학습용 사전 데이터를 시퀀스 번호 형태로 인코딩
@@ -74,7 +91,7 @@ index_to_ner = tag_tokenizer.index_word  # 시퀀스 인덱스를 NER로 변환�
 index_to_ner[0] = "PAD"
 
 # 시퀀스 패딩 처리
-max_len = 30
+max_len = 25
 x_train = keras_preprocessing.sequence.pad_sequences(x_train, padding="post", maxlen=max_len)
 y_train = keras_preprocessing.sequence.pad_sequences(y_train, padding="post", maxlen=max_len)
 
@@ -135,4 +152,3 @@ test_tags = sequences_to_tag(y_test)
 # F1 평가 결과
 print(classification_report(test_tags, pred_tags))
 print("F1-score: {:.1%}".format(f1_score(test_tags, pred_tags)))
-"""

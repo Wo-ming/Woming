@@ -9,7 +9,6 @@ from config.GlobalParams import MAX_SEQ_LEN, INTENTS_DICT
 # 의도 분류 모델 모듈
 class IntentModel:
 	def __init__(self, model_name, proprocess):
-
 		# 의도 클래스별 레이블
 		self.labels = INTENTS_DICT
 
