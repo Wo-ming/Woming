@@ -44,13 +44,14 @@ for t in corpus:
 	sentences.append(sentence)
 	tags.append(Bio_tag)
 
+print(sentences)
+
 """
 print("샘플 크기 : \n", len(sentences))
 print("0번째 샘플 단어 시퀀스 : \n", sentences[0])
 print("0번째 샘플 BIO 태그 : \n", tags[0])
 print("샘플 단어 시퀀스 최대 길이 : ", max(len(l) for l in sentences))					# 패딩 크기 조정
 print("샘플 단어 시퀀스 평균 길이 : ", (sum(map(len, sentences)) / len(sentences)))		# 패딩 크기 조정
-"""
 
 # 토크나이저 정의
 tag_tokenizer = preprocessing.text.Tokenizer(lower=False)  # 태그 정보는 lower = False (소문자로 변환하지 않는다)
@@ -60,10 +61,10 @@ tag_tokenizer.fit_on_texts(tags)
 vocab_size = len(p.word_index) + 1
 tag_size = len(tag_tokenizer.word_index) + 1
 
-"""
+
 print("BIO 태그 사전 크기 : ", tag_size)
 print("단어 사전 크기 : ", vocab_size)
-"""
+
 
 # 학습용 사전 데이터를 시퀀스 번호 형태로 인코딩
 x_train = [p.get_wordidx_sequence(sent) for sent in sentences]
@@ -84,21 +85,21 @@ x_train, x_test, y_train, y_test = train_test_split(x_train, y_train, test_size=
 y_train = keras.utils.to_categorical(y_train, num_classes=tag_size)
 y_test = keras.utils.to_categorical(y_test, num_classes=tag_size)
 
-"""
+
 print("학습 샘플 시퀀스 형상 : ", x_train.shape)
 print("학습 샘플 레이블 형상 : ", y_train.shape)
 print("테스트 샘플 시퀀스 형상 : ", x_test.shape)
 print("테스트 샘플 레이블 형상 : ", y_test.shape)
-"""
+
 
 # 모델 정의(Bi-LSTM)
 from keras.models import Sequential
 from keras.layers import LSTM, Embedding, Dense, TimeDistributed, Dropout, Bidirectional
 from keras.optimizers import Adam
 
-"""
+
 print("모델 정의 시작")
-"""
+
 
 model = Sequential()
 model.add(Embedding(input_dim=vocab_size, output_dim=30, input_length=max_len, mask_zero=True))
@@ -134,3 +135,4 @@ test_tags = sequences_to_tag(y_test)
 # F1 평가 결과
 print(classification_report(test_tags, pred_tags))
 print("F1-score: {:.1%}".format(f1_score(test_tags, pred_tags)))
+"""
