@@ -6,6 +6,7 @@ from keras.layers import Input, Embedding, Dense, Dropout, Conv1D, GlobalMaxPool
 
 from utils.Preprocess import Preprocess
 from config.GlobalParams import MAX_SEQ_LEN, INTENT_SEQ, INTENT_NUM
+from config.Dictation import WORD2INDEX_DIC, USERDIC
 
 # 데이터 읽어오기
 train_file = "../../train_tools/qna/train_data.csv"
@@ -15,7 +16,7 @@ intents = data["intent"].tolist()
 
 
 # 전처리 과정
-p = Preprocess(word2index_dic="../../train_tools/dict/chatbot_dict.bin", userdic="../../utils/user_dic.tsv")
+p = Preprocess(word2index_dic=WORD2INDEX_DIC, userdic=USERDIC)
 
 # 단어 시퀀스 생성
 sequences = []
@@ -50,9 +51,9 @@ val_ds = ds.skip(train_size).take(val_size).batch(25)
 test_ds = ds.skip(train_size + val_size).take(test_size).batch(25)
 
 # 하이퍼파라미터 설정
-dropout_prob = 0.4  # 50% 확률로 dropout -> 학습 과정에서 발생하는 오버피팅(과적합)에 대비
+dropout_prob = 0.5  # 50% 확률로 dropout -> 학습 과정에서 발생하는 오버피팅(과적합)에 대비
 EMB_SIZE = 128  # 임베딩 결과로 나온 밀집 벡터의 크기
-EPOCH = 45
+EPOCH = 40
 VOCAB_SIZE = len(p.word_index) + 1  # 전체 단어 수
 
 # CNN 모델 정의

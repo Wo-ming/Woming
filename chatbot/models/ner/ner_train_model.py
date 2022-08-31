@@ -5,7 +5,7 @@ import keras.utils
 from keras import preprocessing
 import keras_preprocessing.sequence
 from sklearn.model_selection import train_test_split
-
+from config.Dictation import WORD2INDEX_DIC, USERDIC
 
 # 학습 파일 불러오기
 def read_file(file_name):
@@ -23,7 +23,7 @@ def read_file(file_name):
 
 
 # 전처리 객체 생성
-p = Preprocess(word2index_dic="../../train_tools/dict/chatbot_dict.bin", userdic="../../utils/user_dic.tsv")
+p = Preprocess(word2index_dic=WORD2INDEX_DIC, userdic=USERDIC)
 
 # 학습용 말뭉치 데이터를 불러옴
 corpus = read_file("ner_example.txt")
@@ -63,6 +63,7 @@ for element in tags:
 		elif element[idx][4] == 'I':
 			element[idx] = '-'
 
+
 print("샘플 크기 : \n", len(sentences))
 print("0번째 샘플 단어 시퀀스 : \n", sentences[0])
 print("0번째 샘플 BIO 태그 : \n", tags[0])
@@ -77,10 +78,8 @@ tag_tokenizer.fit_on_texts(tags)
 vocab_size = len(p.word_index) + 1
 tag_size = len(tag_tokenizer.word_index) + 1
 
-"""
 print("BIO 태그 사전 크기 : ", tag_size)
 print("단어 사전 크기 : ", vocab_size)
-"""
 
 
 # 학습용 사전 데이터를 시퀀스 번호 형태로 인코딩

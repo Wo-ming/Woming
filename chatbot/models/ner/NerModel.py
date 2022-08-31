@@ -9,7 +9,9 @@ class NerModel:
 	def __init__(self, model_name, proprocess):
 
 		# BIO 태그 클래스별 레이블
-		self.index_to_ner = {1: '0', 2: "B-JOB"}
+		self.index_to_ner = {1: 'DAT_B', 2: 'AFW_B', 3: 'FLD_B', 4: 'PLT_B', 5: 'PER_B', 6:
+			'NUM_B', 7: 'CVL_B', 8: 'ORG_B', 9: 'LOC_B', 10: 'TRM_B', 11: '-', 12: 'TIM_B', 13: 'ANM_B', 14: 'EVT_B',
+							 15: 'MAT_B', 0: 'PAD'}
 
 		# 의도 분류 모델 불러오기
 		self.model = load_model(model_name)
@@ -27,7 +29,7 @@ class NerModel:
 		sequences = [self.p.get_wordidx_sequence(keywords)]
 
 		# 패딩 처리
-		max_len = 40
+		max_len = 25
 		padded_seqs = keras_preprocessing.sequence.pad_sequences(sequences, padding="post", value=0, maxlen=max_len)
 
 		# 키워드별 개체명 예측
