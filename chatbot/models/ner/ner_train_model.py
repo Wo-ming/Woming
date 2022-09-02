@@ -7,6 +7,25 @@ import keras_preprocessing.sequence
 from sklearn.model_selection import train_test_split
 from config.Dictation import WORD2INDEX_DIC, USERDIC
 
+"""
+# 파일 형식에 맞게 read_file 함수 수정할 것.
+def read_file(file_name):
+	sents = []
+	with open(file_name, 'r', encoding='utf-8') as f:
+		lines = f.readlines()
+		for idx, l in enumerate(lines):
+			if l[0] == ';' and lines[idx + 1][0] == '$':
+				this_sent = []
+			elif l[0] == '$' and lines[idx - 1][0] == ';':
+				continue
+			elif l[0] == '\n':
+				sents.append(this_sent)
+			else:
+				this_sent.append(tuple(l.split()))
+	return sents
+"""
+
+
 # 학습 파일 불러오기
 def read_file(file_name):
 	sents = []
@@ -26,11 +45,8 @@ def read_file(file_name):
 p = Preprocess(word2index_dic=WORD2INDEX_DIC, userdic=USERDIC)
 
 # 학습용 말뭉치 데이터를 불러옴
-corpus = read_file("ner_example.txt")
+corpus = read_file("NER_train_data.txt")
 
-"""
-print(corpus)
-"""
 
 # 말뭉치 데이터에서 단어와 BIO 태그만 불러와 학습용 데이터셋 생성
 sentences, tags = [], []
@@ -38,13 +54,21 @@ for t in corpus:
 	tagged_sentence = []
 	sentence, Bio_tag = [], []
 	for w in t:
-		tagged_sentence.append((w[1], w[2]))
+		tagged_sentence.append((w[1], w[2]))  # 파일 형식에 맞게 index 수정.
 		sentence.append(w[1])
 		Bio_tag.append(w[2])
 	sentences.append(sentence)
 	tags.append(Bio_tag)
 
-"""
+
+# 불필요한 태그 삭제
+del_tag = ["PLT_B", "PLT_I", "ANM_B", "ANM_I", "MAT_B", "MAT_I", "TRM_B", "TRM_I"]
+for line in tags:
+	for idx in range(len(line)):
+		if line[idx] in del_tag:
+			line[idx] = '-'
+
+
 # tag 종류 확인
 tag_list = []
 for element in tags:
@@ -53,22 +77,14 @@ for element in tags:
 			tag_list.append(tag)
 tag_list = set(tag_list)
 print(tag_list)
-"""
-
-# I 태그 삭제
-for element in tags:
-	for idx in range(len(element)):
-		if element[idx] == '-':
-			continue
-		elif element[idx][4] == 'I':
-			element[idx] = '-'
 
 
 print("샘플 크기 : \n", len(sentences))
 print("0번째 샘플 단어 시퀀스 : \n", sentences[0])
 print("0번째 샘플 BIO 태그 : \n", tags[0])
-print("샘플 단어 시퀀스 최대 길이 : ", max(len(l) for l in sentences))					# 패딩 크기 조정
-print("샘플 단어 시퀀스 평균 길이 : ", (sum(map(len, sentences)) / len(sentences)))		# 패딩 크기 조정
+print("샘플 단어 시퀀스 최대 길이 : ", max(len(l) for l in sentences))  # 패딩 크기 조정
+print("샘플 단어 시퀀스 평균 길이 : ", (sum(map(len, sentences)) / len(sentences)))  # 패딩 크기 조정
+
 
 # 토크나이저 정의
 tag_tokenizer = preprocessing.text.Tokenizer(lower=False)  # 태그 정보는 lower = False (소문자로 변환하지 않는다)
@@ -80,7 +96,6 @@ tag_size = len(tag_tokenizer.word_index) + 1
 
 print("BIO 태그 사전 크기 : ", tag_size)
 print("단어 사전 크기 : ", vocab_size)
-
 
 # 학습용 사전 데이터를 시퀀스 번호 형태로 인코딩
 x_train = [p.get_wordidx_sequence(sent) for sent in sentences]
@@ -101,7 +116,6 @@ x_train, x_test, y_train, y_test = train_test_split(x_train, y_train, test_size=
 y_train = keras.utils.to_categorical(y_train, num_classes=tag_size)
 y_test = keras.utils.to_categorical(y_test, num_classes=tag_size)
 
-
 print("학습 샘플 시퀀스 형상 : ", x_train.shape)
 print("학습 샘플 레이블 형상 : ", y_train.shape)
 print("테스트 샘플 시퀀스 형상 : ", x_test.shape)
@@ -113,16 +127,14 @@ from keras.models import Sequential
 from keras.layers import LSTM, Embedding, Dense, TimeDistributed, Dropout, Bidirectional
 from keras.optimizers import Adam
 
-
 print("모델 정의 시작")
-
 
 model = Sequential()
 model.add(Embedding(input_dim=vocab_size, output_dim=30, input_length=max_len, mask_zero=True))
 model.add(Bidirectional(LSTM(200, return_sequences=True, dropout=0.50, recurrent_dropout=0.25)))
 model.add(TimeDistributed(Dense(tag_size, activation='softmax')))
 model.compile(loss='categorical_crossentropy', optimizer=Adam(0.01), metrics=['accuracy'])
-model.fit(x_train, y_train, batch_size=256, epochs=5)
+model.fit(x_train, y_train, batch_size=128, epochs=5)
 
 print("평가 결과 : ", model.evaluate(x_test, y_test)[1])
 model.save("ner_model.h5")

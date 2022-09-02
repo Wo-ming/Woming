@@ -4,7 +4,7 @@ from models.ner.NerModel import NerModel
 p = Preprocess(word2index_dic="../train_tools/dict/chatbot_dict.bin", userdic="../utils/user_dic.tsv")
 
 ner = NerModel(model_name="../models/ner/ner_model.h5", proprocess=p)
-query = "홍윤기 박사님이 강의하시는 직업교육에 대해서 알고 싶어."
+query = "12월에 열리는 월드컵에서 내가 할 일은 없을까?."
 predicts = ner.predict(query)
 print(predicts)
 
