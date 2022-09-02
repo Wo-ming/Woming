@@ -1,5 +1,5 @@
-WORD2INDEX_DIC="../../train_tools/dict/chatbot_dict.bin"
-USERDIC="../../train_tools/dict/NIADic2Komoran.tsv"
+WORD2INDEX_DIC="./chatbot/train_tools/dict/chatbot_dict.bin"
+USERDIC="./chatbot/train_tools/dict/NIADic2Komoran.tsv"
 
 def Dictation():
 	global WORD2INDEX_DIC, USERDIC

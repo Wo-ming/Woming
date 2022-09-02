@@ -1,10 +1,12 @@
 from utils.Preprocess import Preprocess
 from models.ner.NerModel import NerModel
+from config.Dictation import WORD2INDEX_DIC, USERDIC
 
-p = Preprocess(word2index_dic="../train_tools/dict/chatbot_dict.bin", userdic="../utils/user_dic.tsv")
+
+p = Preprocess(word2index_dic="../train_tools/dict/chatbot_dict.bin", userdic="../train_tools/dict/NIADic2Komoran/tsv")
 
 ner = NerModel(model_name="../models/ner/ner_model.h5", proprocess=p)
-query = "12월에 열리는 월드컵에서 내가 할 일은 없을까?."
+query = "12월 5일 12시 30분에 시작하는 축구 경기를 보고 싶어. 내가 좋아하는 축구 선수인 손흥민도 나와."
 predicts = ner.predict(query)
 print(predicts)
 

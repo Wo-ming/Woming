@@ -42,7 +42,7 @@ def read_file(file_name):
 
 
 # 전처리 객체 생성
-p = Preprocess(word2index_dic=WORD2INDEX_DIC, userdic=USERDIC)
+p = Preprocess(word2index_dic="../../train_tools/dict/chatbot_dict.bin", userdic="../../train_tools/dict/NIADic2Komoran.tsv")
 
 # 학습용 말뭉치 데이터를 불러옴
 corpus = read_file("NER_train_data.txt")
@@ -62,7 +62,7 @@ for t in corpus:
 
 
 # 불필요한 태그 삭제
-del_tag = ["PLT_B", "PLT_I", "ANM_B", "ANM_I", "MAT_B", "MAT_I", "TRM_B", "TRM_I"]
+del_tag = ["PLT_B", "PLT_I", "ANM_B", "ANM_I", "MAT_B", "MAT_I", "TRM_B", "TRM_I", "FLD_B", "FLD_I", "CVL_B", "CVL_I"]
 for line in tags:
 	for idx in range(len(line)):
 		if line[idx] in del_tag:
