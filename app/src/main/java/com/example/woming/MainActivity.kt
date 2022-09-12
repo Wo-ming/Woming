@@ -17,7 +17,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding;
+    private lateinit var binding: ActivityMainBinding
+    lateinit var myAdapter: MyAdapter
     private val data:MutableList<Member> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         var txt_msg = binding.editTxt
         val img_send = binding.imgSend
 
-        var retrofit = Retrofit.Builder().baseUrl("IP주소")
+        var retrofit = Retrofit.Builder().baseUrl("http://192.168.137.1:8000")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -51,6 +52,8 @@ class MainActivity : AppCompatActivity() {
                     response: Response<Message>
                 ) {
                     var msgg = response.body()
+                    data.add(Member(1,msgg.toString()))
+                    refreshRecyclerView()
                     var dialog = AlertDialog.Builder(this@MainActivity)
                     dialog.setTitle("성공").setMessage(msgg?.msgg).show()
                 }
@@ -68,6 +71,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun initialize() { //recycleview 초기화
+        data.add(Member(1,"우밍에게 무엇이든 물어보세요"))
+        refreshRecyclerView()
 
     }
 
