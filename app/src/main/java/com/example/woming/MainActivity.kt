@@ -28,11 +28,11 @@ class MainActivity : AppCompatActivity() {
         var txt_msg = binding.editTxt
         val img_send = binding.imgSend
 
-    //    var retrofit = Retrofit.Builder().baseUrl("IP주소")
-     //       .addConverterFactory(GsonConverterFactory.create())
-     //       .build()
+        var retrofit = Retrofit.Builder().baseUrl("IP주소")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
 
-     //   var msgservice = retrofit.create(MsgService::class.java)
+        var msgservice = retrofit.create(MsgService::class.java)
 
         initialize() //초기화
         refreshRecyclerView()
@@ -41,9 +41,28 @@ class MainActivity : AppCompatActivity() {
         img_send.setOnClickListener {
             var message = txt_msg.text.toString()
 
-            data.add(Member(message))
+            data.add(Member(0,message))
             refreshRecyclerView()
             txt_msg.setText("") //입력창 공백
+
+            msgservice.requestMsg(message).enqueue(object : Callback<Message> {
+                override fun onResponse(
+                    call: retrofit2.Call<Message>,
+                    response: Response<Message>
+                ) {
+                    var msgg = response.body()
+                    var dialog = AlertDialog.Builder(this@MainActivity)
+                    dialog.setTitle("성공").setMessage(msgg?.msgg).show()
+                }
+
+                override fun onFailure(call: retrofit2.Call<Message>, t: Throwable) {
+                    t.message?.let { it1 -> Log.d("DEBUG", it1) }
+                    var dialog = AlertDialog.Builder(this@MainActivity)
+                    dialog.setTitle("실패!").show()
+                }
+
+
+            })
 
 
         }
