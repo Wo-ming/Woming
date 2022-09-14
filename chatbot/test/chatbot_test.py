@@ -3,7 +3,7 @@ from utils.Database import Database
 from utils.Preprocess import Preprocess
 
 # 전처리 객체 생성
-p = Preprocess(word2index_dic="../train_tools/dict/chatbot_dict.bin", userdic="../utils/user_dic.tsv")
+p = Preprocess(word2index_dic="../train_tools/dict/chatbot_dict.bin", userdic="../train_tools/dict/NIADIc2Komoran.txt")
 
 
 # 질문/답변 학습 디비 연결 객체 생성
@@ -13,7 +13,7 @@ db = Database(
 db.connect()  # DB 연결
 
 # 테스트 원문
-query = "아들이 요즘 너무 속을 썩여서 걱정이야"
+query = "컴퓨터 사업을 하고 싶은데 필요한 자격증이 뭐가 있을까?"
 
 # 의도 파악
 from models.intent.IntentModel import IntentModel

@@ -1,6 +1,5 @@
 from utils.Preprocess import Preprocess
 from models.ner.NerModel import NerModel
-from config.Dictation import WORD2INDEX_DIC, USERDIC
 
 
 p = Preprocess(word2index_dic="../train_tools/dict/chatbot_dict.bin", userdic="../train_tools/dict/NIADic2Komoran/tsv")

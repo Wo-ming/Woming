@@ -5,7 +5,7 @@ import keras.utils
 from keras import preprocessing
 import keras_preprocessing.sequence
 from sklearn.model_selection import train_test_split
-from config.Dictation import WORD2INDEX_DIC, USERDIC
+
 
 """
 # 파일 형식에 맞게 read_file 함수 수정할 것.
@@ -42,7 +42,7 @@ def read_file(file_name):
 
 
 # 전처리 객체 생성
-p = Preprocess(word2index_dic="../../train_tools/dict/chatbot_dict.bin", userdic="../../train_tools/dict/NIADic2Komoran.tsv")
+p = Preprocess(word2index_dic="../../train_tools/dict/chatbot_dict.bin", userdic="../../train_tools/dict/NIADic2Komoran.txt")
 
 # 학습용 말뭉치 데이터를 불러옴
 corpus = read_file("NER_train_data.txt")
@@ -66,6 +66,8 @@ del_tag = ["PLT_B", "PLT_I", "ANM_B", "ANM_I", "MAT_B", "MAT_I", "TRM_B", "TRM_I
 for line in tags:
 	for idx in range(len(line)):
 		if line[idx] in del_tag:
+			line[idx] = '-'
+		elif 'I' in line[idx]:
 			line[idx] = '-'
 
 
@@ -98,28 +100,29 @@ print("BIO 태그 사전 크기 : ", tag_size)
 print("단어 사전 크기 : ", vocab_size)
 
 # 학습용 사전 데이터를 시퀀스 번호 형태로 인코딩
-x_train = [p.get_wordidx_sequence(sent) for sent in sentences]
-y_train = tag_tokenizer.texts_to_sequences(tags)
+x_data = [p.get_wordidx_sequence(sent) for sent in sentences]
+y_data = tag_tokenizer.texts_to_sequences(tags)
 
 index_to_ner = tag_tokenizer.index_word  # 시퀀스 인덱스를 NER로 변환하기 위해 사용
 index_to_ner[0] = "PAD"
 
 # 시퀀스 패딩 처리
 max_len = 25
-x_train = keras_preprocessing.sequence.pad_sequences(x_train, padding="post", maxlen=max_len)
-y_train = keras_preprocessing.sequence.pad_sequences(y_train, padding="post", maxlen=max_len)
+x_data = keras_preprocessing.sequence.pad_sequences(x_data, padding="post", maxlen=max_len)
+y_data = keras_preprocessing.sequence.pad_sequences(y_data, padding="post", maxlen=max_len)
 
 # 학습 데이터와 테스트 데이터를 8:2 비율로 분리
-x_train, x_test, y_train, y_test = train_test_split(x_train, y_train, test_size=.2, random_state=1234)
+x_train, x_test, y_train_int, y_test_int = train_test_split(x_data, y_data, test_size=.2, random_state=1234)
 
-# 출력 데이터를 원-핫 인코딩
-y_train = keras.utils.to_categorical(y_train, num_classes=tag_size)
-y_test = keras.utils.to_categorical(y_test, num_classes=tag_size)
+# 레이블에 해당하는 태깅 정보에 대해서 원-핫 인코딩
+y_train = keras.utils.to_categorical(y_train_int, num_classes=tag_size)
+y_test = keras.utils.to_categorical(y_test_int, num_classes=tag_size)
 
 print("학습 샘플 시퀀스 형상 : ", x_train.shape)
 print("학습 샘플 레이블 형상 : ", y_train.shape)
 print("테스트 샘플 시퀀스 형상 : ", x_test.shape)
 print("테스트 샘플 레이블 형상 : ", y_test.shape)
+
 
 
 # 모델 정의(Bi-LSTM)
@@ -134,7 +137,7 @@ model.add(Embedding(input_dim=vocab_size, output_dim=30, input_length=max_len, m
 model.add(Bidirectional(LSTM(200, return_sequences=True, dropout=0.50, recurrent_dropout=0.25)))
 model.add(TimeDistributed(Dense(tag_size, activation='softmax')))
 model.compile(loss='categorical_crossentropy', optimizer=Adam(0.01), metrics=['accuracy'])
-model.fit(x_train, y_train, batch_size=128, epochs=5)
+model.fit(x_train, y_train, batch_size=64, epochs=5)
 
 print("평가 결과 : ", model.evaluate(x_test, y_test)[1])
 model.save("ner_model.h5")
@@ -156,6 +159,7 @@ def sequences_to_tag(sequences):  # 예측값을 index_to_ner를 사용하여 �
 from seqeval.metrics import f1_score, classification_report
 
 # 테스트 데이터셋의 NER 예측
+# CRF 모델은 원-핫 인코딩을 지원하지 않음.
 y_predicted = model.predict(x_test)
 pred_tags = sequences_to_tag(y_predicted)
 test_tags = sequences_to_tag(y_test)

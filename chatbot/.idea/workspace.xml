@@ -5,7 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="149e632f-4780-4bc6-97ff-7254b8f829dc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/Dictation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/GlobalParams.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/GlobalParams.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/intent/intent_model.h5" beforeDir="false" afterPath="$PROJECT_DIR$/models/intent/intent_model.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/intent/intent_train_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/intent/intent_train_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/ner/NerModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/ner/NerModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/ner/ner_model.h5" beforeDir="false" afterPath="$PROJECT_DIR$/models/ner/ner_model.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/ner/ner_train_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/ner/ner_train_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/ner_transformers/ner-train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/ner_transformers/ner_label.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/ner_transformers/ner_test_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/ner_transformers/ner_train_data.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test/chatbot_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/chatbot_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/model_ner_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/model_ner_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_tools/dict/NIADic.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_tools/dict/NIADic2Komoran.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_tools/dict/create_dict.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_tools/dict/create_dict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_tools/dict/user_dic.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_tools/qna/emotion_train_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/train_tools/qna/emotion_train_data.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,27 +83,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="참고자료_trainmodel" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="chatbot" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/models/ner" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/models/ner/참고자료_trainmodel.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="chatbot_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="chatbot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -99,6 +96,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/chatbot_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="intent_train_model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="chatbot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/models/intent" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/models/intent/intent_train_model.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -149,13 +167,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.NerModel" />
+      <item itemvalue="Python.chatbot_test" />
+      <item itemvalue="Python.model_ner_test" />
+      <item itemvalue="Python.ner_train_model (1)" />
+      <item itemvalue="Python.intent_train_model" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.chatbot_test" />
+        <item itemvalue="Python.intent_train_model" />
         <item itemvalue="Python.model_ner_test" />
-        <item itemvalue="Python.NerModel" />
         <item itemvalue="Python.ner_train_model (1)" />
-        <item itemvalue="Python.참고자료_trainmodel" />
+        <item itemvalue="Python.NerModel" />
       </list>
     </recent_temporary>
   </component>
