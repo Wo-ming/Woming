@@ -1,19 +1,10 @@
-from config.DatabaseConfig import *
-from utils.Database import Database
 from utils.Preprocess import Preprocess
 
 # 전처리 객체 생성
 p = Preprocess(word2index_dic="../train_tools/dict/chatbot_dict.bin", userdic="../train_tools/dict/NIADIc2Komoran.txt")
 
-
-# 질문/답변 학습 디비 연결 객체 생성
-db = Database(
-	host=DB_HOST, user=DB_USER, password=DB_PASSWORD, db_name=DB_NAME
-)
-db.connect()  # DB 연결
-
 # 테스트 원문
-query = "컴퓨터 사업을 하고 싶은데 필요한 자격증이 뭐가 있을까?"
+query = "이번에 본 컴퓨터 자격증 시험에 합격해서 너무 기뻐"
 
 # 의도 파악
 from models.intent.IntentModel import IntentModel
@@ -23,33 +14,14 @@ predict = intent.predict_class(query)
 intent_name = intent.labels[predict]
 
 
-# 개체명 인식
-from models.ner.NerModel import NerModel
-ner = NerModel(model_name="../models/ner/ner_model.h5", proprocess=p)
-predicts = ner.predict(query)
-ner_tags = ner.predict_tags(query)
-
-
 print("질문 : ", query)
 print("=" * 40)
 print("의도 파악 : ", intent_name)
-print("개체명 인식 : ", predicts)
-print("답변 검색에 필요한 NER 태그 : ", ner_tags)
 
 print("=" * 40)
 
-"""
-# 답변 검색
 from utils.FindAnswer import FindAnswer
 
-try:
-	f = FindAnswer(db)
-	answer_text, answer_image = f.search(intent_name, ner_tags="")  
-	answer = f.tag_to_word(predict, answer_text)
-except:
-	answer = "죄송해요, 무슨 말인지 모르겠어요."
-
-print("답변 : ", answer)
-
-db.close()
-"""
+f = FindAnswer("../utils/answer_list.csv")
+answer = f.search(intent=intent_name)
+print("answer : ", answer)
