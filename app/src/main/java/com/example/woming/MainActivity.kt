@@ -63,11 +63,7 @@ class MainActivity : AppCompatActivity() {
                     var dialog = AlertDialog.Builder(this@MainActivity)
                     dialog.setTitle("실패!").show()
                 }
-
-
             })
-
-
         }
     }
     private fun initialize() { //recycleview 초기화
