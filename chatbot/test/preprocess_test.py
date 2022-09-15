@@ -1,9 +1,9 @@
 from utils.Preprocess import  Preprocess
 
-sent = "내일 오전 10시에 탕수육 주문하고 싶어."
+sent = "본국의 가족에게 보내는 송금 총액은 매년 100억 달러를 넘어 필리핀 경제를 지탱하고 가족들을 먹여 살린다."
 
 #전처리 객체 생성
-p = Preprocess(userdic="../utils/user_dic.tsv")
+p = Preprocess(userdic="../train_tools/dict/userdic.txt")
 
 #형태소 분석기 실행
 pos = p.pos(sent)

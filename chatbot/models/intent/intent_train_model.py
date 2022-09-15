@@ -6,17 +6,34 @@ from keras.layers import Input, Embedding, Dense, Dropout, Conv1D, GlobalMaxPool
 
 from utils.Preprocess import Preprocess
 from config.GlobalParams import MAX_SEQ_LEN, INTENT_SEQ, INTENT_NUM
-from config.Dictation import WORD2INDEX_DIC, USERDIC
 
 # 데이터 읽어오기
-train_file = "../../train_tools/qna/train_data.csv"
-data = pd.read_csv(train_file, delimiter=',')
+train_file = "../../train_tools/qna/emotion_train_data.csv"
+data = pd.read_csv(train_file, delimiter=',', low_memory=False)
 queries = data["query"].tolist()
 intents = data["intent"].tolist()
 
+"""
+# intents 카테고리 dictionary 구하기(INTENT_DICT, INTENT_NUM) & intents 카테고리 index 순서 구하기(INTENT_SEQ)
+intents_list = []
+for intent in intents:
+    if intent not in intents_list:
+        intents_list.append(intent)
+
+intents_dict = dict(zip(intents_list,range(len(intents_list))))
+print(intents_dict)
+
+intents_seq = []
+for intent in intents:
+    intents_seq.append(intents_dict[intent])
+
+print(intents_seq)
+print("의도 개수 : ", len(intents_list))
+print("intents_seq 항목 갯수 : ", len(intents_seq))
+"""
 
 # 전처리 과정
-p = Preprocess(word2index_dic=WORD2INDEX_DIC, userdic=USERDIC)
+p = Preprocess(word2index_dic="../../train_tools/dict/chatbot_dict.bin", userdic="../../train_tools/dict/NIADIc2Komoran/txt")
 
 # 단어 시퀀스 생성
 sequences = []
@@ -30,12 +47,12 @@ for sentence in queries:
 # 단어 시퀀스 벡터 크기 = Config의 MAX_SEQ_LEN
 padded_seqs = keras_preprocessing.sequence.pad_sequences(sequences, maxlen=MAX_SEQ_LEN, padding='post')
 
-"""
+
 # (5231, 15)
 print(padded_seqs.shape)
 print(len(intents)) #5231
 print(padded_seqs.tolist())
-"""
+
 
 # 학습용, 검증용, 테스트용 데이터셋 생성
 # 데이터를 랜덤으로 섞고, 학습셋:검증셋:테스트셋 = 7:2:1 비율로 나눔
@@ -53,7 +70,7 @@ test_ds = ds.skip(train_size + val_size).take(test_size).batch(25)
 # 하이퍼파라미터 설정
 dropout_prob = 0.5  # 50% 확률로 dropout -> 학습 과정에서 발생하는 오버피팅(과적합)에 대비
 EMB_SIZE = 128  # 임베딩 결과로 나온 밀집 벡터의 크기
-EPOCH = 40
+EPOCH = 30
 VOCAB_SIZE = len(p.word_index) + 1  # 전체 단어 수
 
 # CNN 모델 정의
