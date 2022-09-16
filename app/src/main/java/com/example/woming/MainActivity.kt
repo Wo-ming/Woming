@@ -36,24 +36,17 @@ class MainActivity : AppCompatActivity() {
         var msgservice = retrofit.create(MsgService::class.java)
 
         initialize() //초기화
-        refreshRecyclerView()
+
+
 
 
         img_send.setOnClickListener {
             var message = txt_msg.text.toString()
 
-            data.add(Member(0,message))
-            refreshRecyclerView()
-            txt_msg.setText("") //입력창 공백
-
             msgservice.requestMsg(message).enqueue(object : Callback<Message> {
-                override fun onResponse(
-                    call: retrofit2.Call<Message>,
-                    response: Response<Message>
-                ) {
+                override fun onResponse(call: retrofit2.Call<Message>, response: Response<Message>) {
                     var msgg = response.body()
                     data.add(Member(1,msgg.toString()))
-                    refreshRecyclerView()
                     var dialog = AlertDialog.Builder(this@MainActivity)
                     dialog.setTitle("성공").setMessage(msgg?.msgg).show()
                 }
@@ -64,11 +57,14 @@ class MainActivity : AppCompatActivity() {
                     dialog.setTitle("실패!").show()
                 }
             })
+
+            data.add(Member(0,message))
+            txt_msg.setText("") //입력창 공백
         }
+        refreshRecyclerView()
     }
     private fun initialize() { //recycleview 초기화
         data.add(Member(1,"우밍에게 무엇이든 물어보세요"))
-        refreshRecyclerView()
 
     }
 
