@@ -64,5 +64,4 @@ class MyAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return listData.size
     }
 
-
 }
