@@ -19,8 +19,8 @@ class MyAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder { //어떤 목록 레이아웃을 만들 것인지
         return when (viewType){ //내 채팅
             RIGHT_TALK->{
-            val binding = RightChatBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-            return RightViewHolder(binding)}
+                val binding = RightChatBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+                return RightViewHolder(binding)}
             LEFT_TALK->{ //우밍 채팅
                 val binding = LeftChatBinding.inflate(LayoutInflater.from(parent.context), parent, false)
                 return LeftViewHolder(binding)
@@ -54,7 +54,7 @@ class MyAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     inner class LeftViewHolder(val binding: LeftChatBinding)
         :RecyclerView.ViewHolder(binding.root){
 
-        }
+    }
 
     fun addItem(member:Member){
         listData.add(member)
@@ -66,5 +66,3 @@ class MyAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
 }
-
-

@@ -14,7 +14,12 @@
         android:layout_marginTop="312dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="자격증"
+        android:backgroundTint="#FFA873"
+        android:drawableTop="@drawable/jobs"
+        android:text="업종소개"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btn3"
         app:layout_constraintEnd_toStartOf="@+id/btn2"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +32,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="312dp"
         android:layout_marginEnd="67dp"
-        android:text="업종소개"
+        android:backgroundTint="#FFA873"
+        android:drawableTop="@drawable/certificate"
+        android:text="자격증"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn1"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,6 +46,8 @@
         android:layout_marginStart="67dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:backgroundTint="#FFA873"
+        android:drawableTop="@drawable/event"
         android:text="행사/교육"
         app:layout_constraintEnd_toStartOf="@+id/btn4"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,9 +60,20 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="67dp"
+        android:backgroundTint="#FFA873"
+        android:drawableTop="@drawable/larboraw"
         android:text="근로법/직장생활TIP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn3"
         app:layout_constraintTop_toBottomOf="@+id/btn2" />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/womingcharacter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

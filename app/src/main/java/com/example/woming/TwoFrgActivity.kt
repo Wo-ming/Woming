@@ -7,11 +7,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.woming.databinding.OnefrgActivityMainBinding
+import com.example.woming.databinding.TwofrgActivityMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
-class OneFrgActivity:AppCompatActivity() {
-    val binding by lazy{OnefrgActivityMainBinding.inflate(layoutInflater)}
+class TwoFrgActivity:AppCompatActivity() {
+    val binding by lazy{TwofrgActivityMainBinding.inflate(layoutInflater)}
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -19,12 +19,13 @@ class OneFrgActivity:AppCompatActivity() {
         //뒤로가기버튼
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val list=listOf(OneFrgA(), OneFrgB(), OneFrgC(), OneFrgD(), OneFrgE(), OneFrgF())
-        val pagerAdapter= FragmentPagerAdapter(list,this)
+        val list=listOf(TwoFrgA(), TwoFrgB(), TwoFrgC(), TwoFrgD(), TwoFrgE(), TwoFrgF(),
+        TwoFrgG(),TwoFrgH(),TwoFrgI(),TwoFrgJ())
+        val pagerAdapter_Two= FragmentPagerAdapter(list,this)
 
-        binding.viewPager.adapter=pagerAdapter
-        val titles=listOf("사무·회계·IT","영업·상담·서비스직","유통·운전","요양·보건·의료","방송미디어","미용·여행·음식·청소")
-        TabLayoutMediator(binding.tabLayout,binding.viewPager){tab, position->
+        binding.viewPager2.adapter=pagerAdapter_Two
+        val titles=listOf("경영·회계·사무","금융·보혐·부동산","정보기술","디자인","이용·미용","사회","요양·보건","언어","음식·서비스","기타")
+        TabLayoutMediator(binding.tabLayout2,binding.viewPager2){tab, position->
             tab.text=titles.get(position)
         }.attach()
 
@@ -39,7 +40,7 @@ class OneFrgActivity:AppCompatActivity() {
     }
 }
 
-class FragmentPagerAdapter(val fragmentList: List<Fragment>, fragmentActivity:FragmentActivity)
+class FragmentPagerAdapter_Two(val fragmentList: List<Fragment>, fragmentActivity:FragmentActivity)
     :FragmentStateAdapter(fragmentActivity){
     override fun getItemCount()=fragmentList.size
     override fun createFragment(position: Int)=fragmentList.get(position)
