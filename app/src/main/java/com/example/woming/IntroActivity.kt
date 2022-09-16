@@ -18,7 +18,7 @@ class IntroActivity : AppCompatActivity() {
         handler.postDelayed( {
             var intent = Intent( this, MainActivity::class.java)
             startActivity(intent)
-        }, 3000)
+        }, 1000)
 
         @Suppress("DEPRECATION")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
