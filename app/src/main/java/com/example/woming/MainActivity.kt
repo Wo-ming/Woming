@@ -1,5 +1,6 @@
 package com.example.woming
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -25,6 +26,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.btnGotoboard.setOnClickListener {
+            startActivity(Intent(this@MainActivity, MenuActivity::class.java))
+        }
 
         var txt_msg = binding.editTxt
         val img_send = binding.imgSend

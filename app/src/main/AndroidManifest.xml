@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.woming">
     <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:usesCleartextTraffic="true"
         android:allowBackup="true"
@@ -15,22 +18,42 @@
 
         <activity
             android:name=".MenuActivity"
+            android:exported="true"
             android:windowSoftInputMode="adjustResize|stateHidden"
-            android:exported="true"/>
-
+       />
         <activity
             android:name=".OneFrgActivity"
             android:exported="true"/>
 
+
+        <activity
+            android:name=".TwoFrgActivity"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"/>
+        <activity
+        android:name=".ThreeFrgActivity"
+        android:exported="true" />
+        <activity
+            android:name=".FourFrgActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".IntroActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            tools:ignore="DuplicateActivity"></activity>
     </application>
 
 </manifest>
