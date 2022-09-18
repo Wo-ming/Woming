@@ -29,6 +29,7 @@
                 android:paddingTop="8dp"
                 android:paddingLeft="8dp"
                 android:typeface="serif"
+                android:textColor="#000000"
                 android:text="@string/pregnant_workers"
                 android:textSize="14sp" />
             <TextView
@@ -46,6 +47,7 @@
                 android:paddingTop="8dp"
                 android:paddingLeft="8dp"
                 android:typeface="serif"
+                android:textColor="#000000"
                 android:text="@string/parental_leave"
                 android:textSize="14sp" />
             <TextView
@@ -63,6 +65,7 @@
                 android:paddingTop="8dp"
                 android:paddingLeft="8dp"
                 android:typeface="serif"
+                android:textColor="#000000"
                 android:text="@string/workplace_harassment"
                 android:textSize="14sp" />
             <TextView
@@ -80,6 +83,7 @@
                 android:paddingTop="8dp"
                 android:paddingLeft="8dp"
                 android:typeface="serif"
+                android:textColor="#000000"
                 android:text="@string/pay"
                 android:textSize="14sp" />
             <TextView
@@ -97,6 +101,7 @@
                 android:paddingTop="8dp"
                 android:paddingLeft="8dp"
                 android:typeface="serif"
+                android:textColor="#000000"
                 android:text="@string/minimum_hourly_wage"
                 android:textSize="14sp" />
             <TextView
@@ -114,6 +119,7 @@
                 android:paddingTop="8dp"
                 android:paddingLeft="8dp"
                 android:typeface="serif"
+                android:textColor="#000000"
                 android:text="@string/working_hours"
                 android:textSize="14sp" />
             <TextView
@@ -131,6 +137,7 @@
                 android:paddingTop="8dp"
                 android:paddingLeft="8dp"
                 android:typeface="serif"
+                android:textColor="#000000"
                 android:text="@string/weekly_holiday_allowance"
                 android:textSize="14sp" />
             <TextView
@@ -148,6 +155,7 @@
                 android:paddingTop="8dp"
                 android:paddingLeft="8dp"
                 android:typeface="serif"
+                android:textColor="#000000"
                 android:text="@string/reat_time"
                 android:textSize="14sp" />
             <TextView
@@ -165,6 +173,7 @@
                 android:paddingTop="8dp"
                 android:paddingLeft="8dp"
                 android:typeface="serif"
+                android:textColor="#000000"
                 android:text="@string/extension_night_holiday_work"
                 android:textSize="14sp" />
             <TextView
@@ -182,6 +191,7 @@
                 android:paddingTop="8dp"
                 android:paddingLeft="8dp"
                 android:typeface="serif"
+                android:textColor="#000000"
                 android:text="@string/annual_paid_vacation"
                 android:textSize="14sp" />
             <TextView
@@ -199,6 +209,7 @@
                 android:paddingTop="8dp"
                 android:paddingLeft="8dp"
                 android:typeface="serif"
+                android:textColor="#000000"
                 android:text="@string/menstrual_leave"
                 android:textSize="14sp" />
             <TextView
@@ -216,6 +227,7 @@
                 android:paddingTop="8dp"
                 android:paddingLeft="8dp"
                 android:typeface="serif"
+                android:textColor="#000000"
                 android:text="@string/retirement_benefit"
                 android:textSize="14sp" />
             <TextView
@@ -233,6 +245,7 @@
                 android:paddingTop="8dp"
                 android:paddingLeft="8dp"
                 android:typeface="serif"
+                android:textColor="#000000"
                 android:text="@string/dismissal"
                 android:textSize="14sp" />
             <TextView
@@ -250,6 +263,7 @@
                 android:paddingTop="8dp"
                 android:paddingLeft="8dp"
                 android:typeface="serif"
+                android:textColor="#000000"
                 android:text="@string/unfair_dismissal"
                 android:textSize="14sp" />
             <TextView
@@ -267,6 +281,7 @@
                 android:paddingTop="8dp"
                 android:paddingLeft="8dp"
                 android:typeface="serif"
+                android:textColor="#000000"
                 android:text="@string/etc"
                 android:textSize="14sp" />
         </LinearLayout>
