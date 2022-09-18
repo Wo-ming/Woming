@@ -1,16 +1,259 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".TwoFrgI">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="FragmentI"
-        android:textSize="34sp" />
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="8dp"
+            android:paddingTop="80dp">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="양식조리기능사"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintBottom_toTopOf="@+id/textView5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/scroll"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="중식조리기능사"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/textView47"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="한식조리기능사"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView11"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/textView49"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="조주기능사"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView48"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/textView51"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="떡제조기능사"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView50"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="제과기능사"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView52"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="일식조리기능사"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintBottom_toTopOf="@+id/textView9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text="한식, 양식, 중식, 일식, 복어조리의 메뉴 계획에 따라 식재료를 선정, 구매, 검수, 보관 및 저장하며 맛과 영양을 고려하여 안전하고 위생적으로 조리 업무를 수행하며 조리기구와 시설을 위생적으로 관리,유지하여 음식을 조리,제공하는 전문인력을 양성하기 위한 자격증이다."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text="한식, 양식, 중식, 일식, 복어조리의 메뉴 계획에 따라 식재료를 선정, 구매, 검수, 보관 및 저장하며 맛과 영양을 고려하여 안전하고 위생적으로 조리 업무를 수행하며 조리기구와 시설을 위생적으로 관리, 유지하여 음식을 조리, 제공하는 전문인력을 양성하기 위한 자격증이다."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text="한식, 양식, 중식, 일식, 복어조리의 메뉴 계획에 따라 식재료를 선정, 구매, 검수, 보관 및 저장하며 맛과 영양을 고려하여 안전하고 위생적으로 조리 업무를 수행하며 조리기구와 시설을 위생적으로 관리, 유지하여 음식을 조리, 제공하는 전문인력을 양성하기 위한 자격증이다."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+            <TextView
+                android:id="@+id/textView48"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text="한식, 양식, 중식, 일식, 복어조리의 메뉴 계획에 따라 식재료를 선정, 구매, 검수, 보관 및 저장하며 맛과 영양을 고려하여 안전하고 위생적으로 조리 업무를 수행하며 조리기구와 시설을 위생적으로 관리,유지하여 음식을 조리, 제공하는 전문인력을 양성하기 위"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView47" />
+
+            <TextView
+                android:id="@+id/textView50"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text="조주에 관한 숙련기능을 가지고 조주작업과 관련되는 업무를 수행할 수 있는 전문인력을 양성하기 위한 자격증이다."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView49" />
+
+            <TextView
+                android:id="@+id/textView52"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text="떡제조기능사는 전통음식 시장의 인력부족현상을 해결하고 전통음식에 대한 보다 체계적인 교육을 통한 전문인을 양성하기 위한 자격증이다. 떡제조기능사는 식품위생과 개인안전관리에 유의하여 곡류, 두류, 과채류 등과 같은 재료를 빻기, 찌기, 발효, 지지기, 치기, 삶기 등의 공정을 거쳐 각종 떡류를 만드는 직무를 수행한다."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView51" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text="제과기능사는 식생활 변화 등으로 제과에 대한 소비가 늘어남에 따라 제과에 관한 숙련기능을 가지고, 제과제조와 관련된 업무를 수행할 수 있는 능력을 가진 전문기능인력을 양성하기 위한 자격증이다. 제과에 관한 숙련기능을 가지고 각 제과제품 제조에 필요한 재료의 배합표 작성, 재료 평량을 하고 각종 제과용 기계 및 기구를 사용하여 성형, 굽기, 장식, 포장 등의 공정을 거쳐 각종 제과 제품을 만드는 업무를 수행한다. "
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

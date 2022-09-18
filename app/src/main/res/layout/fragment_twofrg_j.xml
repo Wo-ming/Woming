@@ -1,16 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".TwoFrgJ">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="FragmentJ"
-        android:textSize="34sp" />
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="8dp"
+            android:paddingTop="80dp">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="한국사능력검정시험"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintBottom_toTopOf="@+id/textView5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/scroll"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text="한 나라의 국민으로서 가져야 하는 기본적인 역사적 소양을 측정하고, 역사에 대한 전 국민적 공감대를 형성하기 위한 시험이다. 기본 · 심화시험으로 나뉘며 심화시험은 한국사 심화과정으로서 한국사에 대한 체계적인 이해를 바탕으로 한국사의 주요 사건과 개념을 종합적으로 이해하고, 역사 자료를 분석하고 해석하는 능력, 한국사의 흐름 속에서 시대적 상황 및 쟁점을 파악하는 능력을 평가하고, 기본시험은 한국사 기본과정으로서 기초적인 역사 상식을 바탕으로 한국사의 필수 지식과 기본적인 흐름을 이해하는 능력을 평가한다. "
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,16 +1,260 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".TwoFrgB">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="FragmentB"
-        android:textSize="34sp" />
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="8dp"
+            android:paddingTop="80dp">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="신용분석사"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintBottom_toTopOf="@+id/textView5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/scroll"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="투자자산운용사"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="건강보험사"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView11"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="손해사정사"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView13"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="보험조사분석사"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView15"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="감정평가사"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView17"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="신용관리사"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintBottom_toTopOf="@+id/textView9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text="은행의 기업금융 분야에서 필요로 하는 자격증으로, 은행에서 기업대출을 하기위해 기업의 신용위험을 분석하는 일을 한다."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text="개인이나 기업에 지원한 여신(대출포함)의 정상적인 상환이 불가할 경우 민·상법의 범위 내에서 채권추심 등의 업무를 수행한다."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text=" 투자자산운용사는 고객별 종합적인 자산 운용 전략을 수립하여 맞춤형 자산 관리 서비스를 제공하고 WRAP ACCOUNT업무를 수행한다. 보통 펀드매니저라고 한다."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text="건강보험사는 의료보험에 관한 수가 적용, 진료비 청구 및 이에 따른 제반 관리 업무를 담당한다. 보건행정전공자이거나 1994~2001년까지 협회에서 실시한 병원행정장기연수 의료보험사 과정 수료자에 응시자격 제한이 있다."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text="보험사고 발생시 손해액 및 보험금의 산정업무를 전문적으로 수행하는 자로서 보험금지급의 객관성과 공정성을 확보하여 보험계약자나 피해자의 권익을 침해하지 않도록 해주는 일, 즉 보험사고발생시 손해액 및 보험금을 객관적이고 공정하게 산정하는 자이다."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text="보험업무 전 단계에서 보험사고를 조사 및 분석하고, 보험범죄의 예방 업무를 담당할 수 있음을 입증하는 자격증이다."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text="부에서 매년 고시하는 공시지가와 관련된 표준지를 조사 · 평가하고 기업체 등의 의뢰와 관련된 자산을 재평가하며 금융기관, 보험회사, 신탁회사의 의뢰와 관련된 토지 및 동산에 대한 평가 업무를 수행한다."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,11 +20,11 @@ class FourFrgActivity:AppCompatActivity() {
         //뒤로가기버튼
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val list=listOf(FourFrgA(), FourFrgB())
+        val list=listOf(FourFrgA(), FourFrgB(),FourFrgC())
         val pagerAdapter_Four= FragmentPagerAdapter(list,this)
 
         binding.viewPager4.adapter=pagerAdapter_Four
-        val titles=listOf("근로법","직장생활 Tip")
+        val titles=listOf("근로법","직장생활 Tip","                                                                 ")
         TabLayoutMediator(binding.tabLayout4,binding.viewPager4){tab, position->
             tab.text=titles.get(position)
         }.attach()

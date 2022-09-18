@@ -1,16 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".TwoFrgG">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="FragmentG"
-        android:textSize="34sp" />
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="8dp"
+            android:paddingTop="80dp">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="간호조무사"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintBottom_toTopOf="@+id/textView5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/scroll"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="간병사"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="요양보호사"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView11"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="국제의료관광코디네이터"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintBottom_toTopOf="@+id/textView9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text="고등학교 이상 학력자가 1,520시간의 간호조무사 교육을 이수하고 보건의료인국가시험원에서 시행하는 간호조무사 국가시험에 합격해야한다.  간호사의 지도하에 간호사의 업무를 보조하는 업무를 수행하고 있다."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text="국제화되는 의료시장에서 외국인환자를 유치하고 관리하기 위한 구체적인 진료서비스지원, 관광지원, 국내외 의료기관의 국가 간 진출을 지원할 수 있는 의료관광 마케팅, 의료관광 상담, 리스크관리 및 행정업무 등을 담당함으로써 우리나라의 글로벌헬스케어산업의 발전 및 대외 경쟁력을 향상시키는 직무를 담당한다"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text="간호학원이나 일반 사립단체에서 특정한 교육과정을 이수하고 환자를 돌보는 간병인을 대상으로 민간 간병사 자격시험기관이 인정하는 자격을 취득한 전문 간병인이다."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text="치매 · 중풍 등 노인성 질환으로 독립적인 일상생활을 수행하기 어려운 노인들을 위해 신체 및 가사 지원 서비스를 전문적으로 제공하는 인력이다. 요양보호사 교육기관에서 교육과정을 이수한 후, 요양보호사 자격시험에 합격해야만 자격증을 취득할 수 있다."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

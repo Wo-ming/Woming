@@ -1,16 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".TwoFrgF">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="FragmentF"
-        android:textSize="34sp" />
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="8dp"
+            android:paddingTop="80dp">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="사회복지사"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintBottom_toTopOf="@+id/textView5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/scroll"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="수화통역사"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="직업상담사"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView11"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="보육교사"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:layout_constraintBottom_toTopOf="@+id/textView9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text="사회복지사란 사회복지에 관한 전문지식과 기술을 가진 사람으로서, 보건복지부장관이 발급하는 사회복지사 자격증을 받은 사람을 말한다. 1급의 경우 응시자격을 갖춘 자가 사회복지사 1급 국가시험을 합격해야 자격증이 발급이 되고, 2급의 경우 일정 학점의 수업 이수와 현장실습 등의 요건을 충족하면 무시험으로 자격증을 취득할 수 있다."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text=" 영유아를 대상으로 발달에 적합한 실제에 기초하여 영유아의 전인적 발달을 도모하고, 성장과 발달에 영향을 미치는 동시에 가족의 안녕과 건강을 지원하는 전문가이다. 보육교사는 학력 및 경력기간에 따라 1급, 2급, 3급, 3단계로 구분된다. 3급의 응시자격은 고등학교 또는 이와 같은 수준 이상의 학교를 졸업한 사람으로서 보건복지부령으로 정하는 교육훈련 시설에서 정해진 교육과정을 수료한 사람이다."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text="농인과 청인 사이에서 의사소통을 원활히 하기 위한 통역 능력을 평가하는 시험이다."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="0dp"
+                android:paddingTop="8dp"
+                android:text="국가의 인적자원을 효율적으로 활용하여 국가경쟁력과 잠재성장률을 향상시킬 수 있도록 기여하는 직업에 관련된 전문 인력을 양성하기 위한 자격이다.  직업상담사의 자격 등급은 1급과 2급으로 구분되어 있으며 2급은 누구나 응시할 수 있다."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

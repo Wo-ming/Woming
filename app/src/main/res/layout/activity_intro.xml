@@ -10,10 +10,10 @@
 
     <ImageView
         android:id="@+id/intro"
-        android:layout_width="201dp"
-        android:layout_height="221dp"
+        android:layout_width="213dp"
+        android:layout_height="203dp"
         android:layout_marginStart="105dp"
-        android:layout_marginTop="114dp"
+        android:layout_marginTop="150dp"
         android:layout_marginEnd="105dp"
         android:foregroundGravity="center"
         android:scaleType="fitXY"
@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="64dp"
         android:text="경력단절 여성들을 위한 어플"
         android:textSize="24sp"
