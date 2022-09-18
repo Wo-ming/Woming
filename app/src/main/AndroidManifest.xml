@@ -25,7 +25,6 @@
             android:name=".OneFrgActivity"
             android:exported="true"/>
 
-
         <activity
             android:name=".TwoFrgActivity"
             android:exported="true" />
@@ -33,8 +32,8 @@
             android:name=".MainActivity"
             android:exported="true"/>
         <activity
-        android:name=".ThreeFrgActivity"
-        android:exported="true" />
+            android:name=".ThreeFrgActivity"
+            android:exported="true" />
         <activity
             android:name=".FourFrgActivity"
             android:exported="true" />

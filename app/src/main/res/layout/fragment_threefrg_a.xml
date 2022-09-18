@@ -6,11 +6,15 @@
     tools:context=".ThreeFrgA">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="3-FragmentA"
-        android:textSize="34sp" />
-
+        android:paddingTop="80dp">
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:listitem="@layout/item_recycler_event"
+        android:id="@+id/eventRecylerview" />
+    </LinearLayout>
 </FrameLayout>

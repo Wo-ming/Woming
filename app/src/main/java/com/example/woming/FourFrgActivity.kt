@@ -24,7 +24,7 @@ class FourFrgActivity:AppCompatActivity() {
         val pagerAdapter_Four= FragmentPagerAdapter(list,this)
 
         binding.viewPager4.adapter=pagerAdapter_Four
-        val titles=listOf("A","B")
+        val titles=listOf("근로법","직장생활 Tip")
         TabLayoutMediator(binding.tabLayout4,binding.viewPager4){tab, position->
             tab.text=titles.get(position)
         }.attach()

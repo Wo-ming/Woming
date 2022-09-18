@@ -5,12 +5,270 @@
     android:layout_height="match_parent"
     tools:context=".FourFrgA">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="4-FragmentA"
-        android:textSize="34sp" />
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="80dp"
+            android:paddingLeft="8dp"
+            android:orientation="vertical" >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:textColor="#000000"
+                android:text="임신 근로자"
+                android:textSize="25sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:typeface="serif"
+                android:text="@string/pregnant_workers"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="20dp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:textColor="#000000"
+                android:text="육아 휴직"
+                android:textSize="25sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:typeface="serif"
+                android:text="@string/parental_leave"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="20dp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:textColor="#000000"
+                android:text="직장 내 괴롭힘"
+                android:textSize="25sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:typeface="serif"
+                android:text="@string/workplace_harassment"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="20dp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:textColor="#000000"
+                android:text="임금"
+                android:textSize="25sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:typeface="serif"
+                android:text="@string/pay"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="20dp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:textColor="#000000"
+                android:text="최저 시급"
+                android:textSize="25sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:typeface="serif"
+                android:text="@string/minimum_hourly_wage"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="20dp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:textColor="#000000"
+                android:text="근로 시간"
+                android:textSize="25sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:typeface="serif"
+                android:text="@string/working_hours"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="20dp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:textColor="#000000"
+                android:text="주휴 수당"
+                android:textSize="25sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:typeface="serif"
+                android:text="@string/weekly_holiday_allowance"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="20dp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:textColor="#000000"
+                android:text="휴게 시간"
+                android:textSize="25sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:typeface="serif"
+                android:text="@string/reat_time"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="20dp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:textColor="#000000"
+                android:text="연장ㆍ 야간ㆍ휴일 근로"
+                android:textSize="25sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:typeface="serif"
+                android:text="@string/extension_night_holiday_work"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="20dp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:textColor="#000000"
+                android:text="연차ㆍ유급휴가"
+                android:textSize="25sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:typeface="serif"
+                android:text="@string/annual_paid_vacation"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="20dp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:textColor="#000000"
+                android:text="생리 휴가"
+                android:textSize="25sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:typeface="serif"
+                android:text="@string/menstrual_leave"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="20dp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:textColor="#000000"
+                android:text="퇴직급여"
+                android:textSize="25sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:typeface="serif"
+                android:text="@string/retirement_benefit"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="20dp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:textColor="#000000"
+                android:text="해고"
+                android:textSize="25sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:typeface="serif"
+                android:text="@string/dismissal"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="20dp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:textColor="#000000"
+                android:text="부당해고ㆍ구제신청"
+                android:textSize="25sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:typeface="serif"
+                android:text="@string/unfair_dismissal"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="20dp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:textColor="#000000"
+                android:text="기타"
+                android:textSize="25sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:typeface="serif"
+                android:text="@string/etc"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>

@@ -8,7 +8,6 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.woming.databinding.ThreefrgActivityMainBinding
-import com.example.woming.databinding.TwofrgActivityMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
 class ThreeFrgActivity:AppCompatActivity() {
@@ -24,7 +23,7 @@ class ThreeFrgActivity:AppCompatActivity() {
         val pagerAdapter_Three= FragmentPagerAdapter(list,this)
 
         binding.viewPager3.adapter=pagerAdapter_Three
-        val titles=listOf("A","B")
+        val titles=listOf("행사","교육")
         TabLayoutMediator(binding.tabLayout3,binding.viewPager3){tab, position->
             tab.text=titles.get(position)
         }.attach()

@@ -5,12 +5,52 @@
     android:layout_height="match_parent"
     tools:context=".FourFrgB">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="4-FragmentB"
-        android:textSize="34sp" />
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="80dp"
+        android:paddingLeft="8dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:textColor="#000000"
+            android:text="성희롱"
+            android:textSize="25sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="8dp"
+            android:paddingLeft="8dp"
+            android:typeface="serif"
+            android:text="성희롱 설명"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="20dp"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:textColor="#000000"
+            android:text="직장 내 괴롭힘"
+            android:textSize="25sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="8dp"
+            android:paddingLeft="8dp"
+            android:typeface="serif"
+            android:text="직장 내 괴롭힘 설명"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>
