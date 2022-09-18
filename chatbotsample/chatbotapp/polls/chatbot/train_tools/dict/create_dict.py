@@ -13,7 +13,7 @@ import pickle
 
 # 말뭉치 데이터 읽어오기
 def read_corpus_data(filename):
-	with open(filename, 'r') as f:
+	with open(filename, 'r', encoding="utf-8") as f:
 		data = [line.split("\t") for line in f.read().splitlines()]
 		data = data[1:]  # 헤더 제거
 	return data

@@ -33,7 +33,7 @@ print("intents_seq 항목 갯수 : ", len(intents_seq))
 """
 
 # 전처리 과정
-p = Preprocess(word2index_dic="../../train_tools/dict/chatbot_dict.bin", userdic="../../train_tools/dict/NIADIc2Komoran/txt")
+p = Preprocess(word2index_dic="../../train_tools/dict/chatbot_dict.bin", userdic="../../train_tools/dict/userdict.txt")
 
 # 단어 시퀀스 생성
 sequences = []
